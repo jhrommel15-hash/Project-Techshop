@@ -1,0 +1,229 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Products | TechStore</title>
+
+    <!-- Shared CSS: use the same order as the homepage -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="deals.html">Deals</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+          <!-- Customer Order History -->
+          <li>
+            <a href="my-orders.php">
+              <i class="fa-solid fa-box"></i>
+              My Orders
+            </a>
+          </li>
+
+          <!-- Customer Order Tracking -->
+          <li>
+            <a href="track-order.html">
+              <i class="fa-solid fa-truck-fast"></i>
+              Track My Order
+            </a>
+          </li>
+
+          <!-- Admin link: shown after server verification -->
+          <li id="admin-dashboard-item" style="display: none">
+            <a href="admin/index.php" class="admin-link">
+              <i class="fa-solid fa-gauge-high"></i>
+              Admin Dashboard
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Product Search -->
+      <div class="search">
+        <input
+          type="text"
+          id="header-search-products"
+          placeholder="Search for products..."
+          aria-label="Search for products"
+        />
+
+        <button
+          id="search-button"
+          type="button"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- User / Cart / Wishlist -->
+      <div class="icons">
+        <a href="wishlist.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+
+        <!-- Login: shared homepage button class -->
+        <a href="login.html" id="login-link" class="login-btn">
+          <i class="fa-regular fa-user"></i>
+          Login
+        </a>
+
+        <!-- Logged-in User -->
+        <div id="user-menu" class="user-menu" style="display: none">
+          <a href="account.html" class="user-account-link">
+            <i class="fa-solid fa-user"></i>
+            <span id="username"></span>
+          </a>
+
+          <button
+            class="logout-btn"
+            type="button"
+            onclick="logout()"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PAGE TITLE ================= -->
+    <section class="page-title">
+      <h1>All Products</h1>
+      <p>Browse our latest technology products.</p>
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+    <section class="products-page">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Categories</h2>
+
+        <button class="category-btn active" data-category="all">
+          All
+        </button>
+
+        <button class="category-btn" data-category="Smartphone">
+          Smartphones
+        </button>
+
+        <button class="category-btn" data-category="Laptop">
+          Laptops
+        </button>
+
+        <button class="category-btn" data-category="Smartwatch">
+          Watches
+        </button>
+
+        <button class="category-btn" data-category="Audio">
+          Audio
+        </button>
+      </aside>
+
+      <!-- Products Content -->
+      <div class="products-content">
+        <div class="products-top">
+          <input
+            type="text"
+            id="search-products"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+
+          <select id="sort-products" aria-label="Sort products">
+            <option value="default">Sort By</option>
+            <option value="low-high">Price: Low to High</option>
+            <option value="high-low">Price: High to Low</option>
+            <option value="rating">Highest Rating</option>
+          </select>
+        </div>
+
+        <!-- Products load here -->
+        <div id="all-products" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>© 2026 TechStore. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+
+    <!-- Verify admin access on the server -->
+    <script>
+      (async function checkAdminSession() {
+        const adminLink = document.getElementById(
+          "admin-dashboard-item"
+        );
+
+        if (!adminLink) return;
+
+        adminLink.style.display = "none";
+
+        try {
+          const response = await fetch("api/admin-status.php", {
+            method: "GET",
+            credentials: "same-origin",
+            cache: "no-store"
+          });
+
+          if (!response.ok) return;
+
+          const result = await response.json();
+
+          if (result.isAdmin === true) {
+            adminLink.style.display = "";
+          }
+        } catch (error) {
+          adminLink.style.display = "none";
+        }
+      })();
+    </script>
+  </body>
+</html>

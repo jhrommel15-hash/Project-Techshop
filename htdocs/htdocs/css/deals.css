@@ -1,0 +1,219 @@
+/* ================================
+   DEALS PAGE
+================================ */
+
+.deals-page {
+  min-height: 80vh;
+  padding: 60px 20px;
+  background: #f5f7fb;
+}
+
+.deals-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   DEALS HEADER
+================================ */
+
+.deals-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.deals-label {
+  display: inline-block;
+  color: #2874f0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.deals-header h1 {
+  font-size: 36px;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.deals-header p {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* ================================
+   DEALS GRID
+================================ */
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ================================
+   DEAL CARD
+================================ */
+
+.deal-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+  position: relative;
+}
+
+.deal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   DISCOUNT BADGE
+================================ */
+
+.deal-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  background: #ef4444;
+  color: white;
+
+  padding: 7px 12px;
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  z-index: 2;
+}
+
+/* ================================
+   PRODUCT IMAGE
+================================ */
+
+.deal-image {
+  width: 100%;
+  height: 240px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8fafc;
+  padding: 20px;
+}
+
+.deal-image img {
+  max-width: 85%;
+  max-height: 210px;
+  object-fit: contain;
+}
+
+/* ================================
+   DEAL INFORMATION
+================================ */
+
+.deal-info {
+  padding: 22px;
+}
+
+.deal-info h2 {
+  margin: 0 0 8px;
+
+  color: #111827;
+  font-size: 20px;
+}
+
+.deal-brand {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ================================
+   PRICE
+================================ */
+
+.deal-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.deal-old-price {
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.deal-new-price {
+  color: #2874f0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.deal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2874f0;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.deal-button:hover {
+  background: #1769e0;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+  .deals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .deals-page {
+    padding: 40px 15px;
+  }
+
+  .deals-header h1 {
+    font-size: 28px;
+  }
+
+  .deals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .deal-image {
+    height: 220px;
+  }
+}

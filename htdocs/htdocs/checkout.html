@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | TechStore</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-laptop"></i>
+        TechStore
+      </a>
+
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="wishlist.html">
+          Wishlist <span id="wishlist-count">0</span>
+        </a>
+        <a href="cart.html">
+          Cart <span id="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CHECKOUT -->
+  <main class="checkout-page">
+    <div class="container">
+
+      <div class="checkout-heading">
+        <h1>Checkout</h1>
+        <p>Complete your delivery and payment information.</p>
+      </div>
+
+      <div class="checkout-layout">
+
+        <!-- CUSTOMER AND DELIVERY INFORMATION -->
+        <section class="checkout-form-section">
+          <form id="checkout-form">
+
+            <div class="checkout-card">
+              <h2>
+                <i class="fa-solid fa-user"></i>
+                Customer Information
+              </h2>
+
+              <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input
+                  type="text"
+                  id="customer-name"
+                  name="customer-name"
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input
+                  type="email"
+                  id="customer-email"
+                  name="customer-email"
+                  placeholder="example@email.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <!-- PHONE NUMBER WITH COUNTRY SELECTOR -->
+              <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+
+                <div class="phone-input-wrapper">
+                  <select
+                    id="phone-country"
+                    name="phone-country"
+                    aria-label="Select phone country"
+                    required
+                  >
+                    <option value="PH" data-dial="+63" data-length="10" selected>
+                      🇵🇭 Philippines (+63)
+                    </option>
+                    <option value="US" data-dial="+1" data-length="10">
+                      🇺🇸 United States (+1)
+                    </option>
+                    <option value="CA" data-dial="+1" data-length="10">
+                      🇨🇦 Canada (+1)
+                    </option>
+                    <option value="GB" data-dial="+44" data-length="10">
+                      🇬🇧 United Kingdom (+44)
+                    </option>
+                    <option value="AU" data-dial="+61" data-length="9">
+                      🇦🇺 Australia (+61)
+                    </option>
+                    <option value="SG" data-dial="+65" data-length="8">
+                      🇸🇬 Singapore (+65)
+                    </option>
+                    <option value="IN" data-dial="+91" data-length="10">
+                      🇮🇳 India (+91)
+                    </option>
+                    <option value="JP" data-dial="+81" data-length="10">
+                      🇯🇵 Japan (+81)
+                    </option>
+                    <option value="AE" data-dial="+971" data-length="9">
+                      🇦🇪 United Arab Emirates (+971)
+                    </option>
+                  </select>
+
+                  <input
+                    type="tel"
+                    id="customer-phone"
+                    name="customer-phone"
+                    placeholder="9171234567"
+                    inputmode="numeric"
+                    autocomplete="tel-national"
+                    maxlength="10"
+                    pattern="[0-9]+"
+                    title="Enter numbers only, without the country calling code."
+                    aria-describedby="phone-help phone-error"
+                    required
+                  >
+                </div>
+
+                <small id="phone-help" class="phone-help">
+                  Enter numbers only, without the country calling code.
+                </small>
+
+                <small
+                  id="phone-error"
+                  class="phone-error"
+                  role="alert"
+                ></small>
+              </div>
+            </div>
+
+            <!-- DELIVERY INFORMATION -->
+            <div class="checkout-card">
+              <h2>
+                <i class="fa-solid fa-truck"></i>
+                Delivery Information
+              </h2>
+
+              <div class="form-group">
+                <label for="address">Street Address</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  placeholder="House number, street, barangay"
+                  autocomplete="street-address"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city">City / Municipality</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Enter your city"
+                    autocomplete="address-level2"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="postal">Postal Code</label>
+                  <input
+                    type="text"
+                    id="postal"
+                    name="postal"
+                    placeholder="Postal code"
+                    autocomplete="postal-code"
+                    required
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- PAYMENT -->
+            <div class="checkout-card">
+              <h2>
+                <i class="fa-solid fa-credit-card"></i>
+                Payment Method
+              </h2>
+
+              <label class="payment-option">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="cod"
+                  required
+                >
+                <span>
+                  <i class="fa-solid fa-money-bill-wave"></i>
+                  Cash on Delivery
+                </span>
+              </label>
+
+              <label class="payment-option">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="gcash"
+                >
+                <span>
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  GCash
+                </span>
+              </label>
+
+              <label class="payment-option">
+                <input
+                  type="radio"
+                  name="payment"
+                  value="card"
+                >
+                <span>
+                  <i class="fa-solid fa-credit-card"></i>
+                  Credit / Debit Card
+                </span>
+              </label>
+
+              <p class="payment-note">
+                Payment processing depends on your configured payment system.
+                Selecting GCash or card here does not automatically process a payment.
+              </p>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- ORDER SUMMARY -->
+        <aside class="checkout-summary">
+          <div class="checkout-card">
+            <h2>
+              <i class="fa-solid fa-bag-shopping"></i>
+              Order Summary
+            </h2>
+
+            <div id="checkout-items">
+              <p>Loading your cart...</p>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkout-subtotal">₱0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping Fee</span>
+              <strong id="checkout-shipping">₱0</strong>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row summary-total">
+              <span>Total</span>
+              <strong id="checkout-total">₱0</strong>
+            </div>
+
+            <button
+              type="button"
+              id="place-order"
+              class="place-order-btn"
+            >
+              <i class="fa-solid fa-check"></i>
+              Place Order
+            </button>
+
+            <a href="cart.html" class="back-to-cart">
+              <i class="fa-solid fa-arrow-left"></i>
+              Return to Cart
+            </a>
+
+            <p class="secure-checkout">
+              <i class="fa-solid fa-lock"></i>
+              Your checkout information
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 TechStore. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Load checkout logic; no external phone library is required. -->
+  <script src="js/checkout.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

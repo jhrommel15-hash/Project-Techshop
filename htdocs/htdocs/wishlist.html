@@ -1,0 +1,118 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Wishlist | CDC TECH SHOP</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="wishlist.html">Wishlist</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </nav>
+
+      <!-- Product Search -->
+      <div class="search">
+        <input
+          type="text"
+          id="search-products"
+          placeholder="Search for products..."
+          aria-label="Search for products"
+        />
+
+        <button
+          id="search-button"
+          type="button"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Wishlist / Cart / User -->
+      <div class="icons">
+        <a href="wishlist.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+
+        <!-- Login Link -->
+        <a href="login.html" id="login-link" aria-label="Login">
+          <i class="fa-regular fa-user"></i>
+        </a>
+
+        <!-- Logged-in User -->
+        <div id="user-menu" style="display: none">
+          <a href="account.html" class="user-account-link">
+            <i class="fa-solid fa-user"></i>
+            <span id="username"></span>
+          </a>
+
+          <!-- FIXED LOGOUT BUTTON -->
+          <button
+            type="button"
+            class="logout-btn"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- WISHLIST CONTENT -->
+    <main class="wishlist-page">
+      <h1>My Wishlist ❤️</h1>
+
+      <!-- Wishlist products are rendered by wishlist.js -->
+      <div id="wishlist-items"></div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

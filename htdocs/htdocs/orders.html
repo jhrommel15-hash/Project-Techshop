@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Orders | TechStore</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Orders CSS -->
+    <link rel="stylesheet" href="css/orders.css" />
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================================
+     HEADER
+================================ -->
+
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li>
+            <a href="index.html"> Home </a>
+          </li>
+
+          <li>
+            <a href="products.html"> Products </a>
+          </li>
+
+          <li>
+            <a href="wishlist.html"> Wishlist </a>
+          </li>
+
+          <li>
+            <a href="cart.html"> Cart </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================================
+     ORDERS PAGE
+================================ -->
+
+    <main class="orders-page">
+      <div class="orders-container">
+        <div class="orders-header">
+          <h1>
+            <i class="fa-solid fa-box"></i>
+
+            My Orders
+          </h1>
+
+          <a href="account.html">
+            <i class="fa-solid fa-arrow-left"></i>
+
+            My Account
+          </a>
+        </div>
+
+        <!-- Orders will be inserted here -->
+
+        <div id="orders-list">
+          <!-- JavaScript will display orders -->
+        </div>
+      </div>
+    </main>
+
+    <!-- ================================
+     JAVASCRIPT
+================================ -->
+
+    <script src="js/orders.js"></script>
+  </body>
+</html>

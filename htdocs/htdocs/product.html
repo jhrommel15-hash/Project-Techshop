@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Product Details | TechStore</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <!-- Use the SAME working navbar from your index.html here -->
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+
+          <li><a href="products.html">Products</a></li>
+
+          <li><a href="categories.html">Categories</a></li>
+
+          <li><a href="deals.html">Deals</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="search">
+        <input
+          type="text"
+          id="search-products"
+          placeholder="Search for products..."
+        />
+
+        <button id="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div class="icons">
+        <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+
+          <span id="cart-count">0</span>
+        </a>
+
+        <a href="login.html">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <!-- Logged-in User -->
+        <div id="user-menu" style="display: none">
+          <a href="account.html" class="user-account-link">
+            <i class="fa-solid fa-user"></i>
+
+            <span id="username"></span>
+          </a>
+
+          <button onclick="logout()">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PRODUCT DETAILS ================= -->
+
+    <main class="product-details">
+      <!-- LEFT SIDE -->
+
+      <div class="product-gallery">
+        <div id="thumbnail-container" class="thumbnail-container"></div>
+
+        <div class="main-product-image">
+          <img id="main-image" src="" alt="Product" />
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+
+      <div class="product-information">
+        <h1 id="product-name">Product Name</h1>
+
+        <div id="product-rating" class="product-rating"></div>
+
+        <div id="product-price" class="product-price"></div>
+
+        <p id="product-description" class="product-description"></p>
+
+        <!-- Brand -->
+
+        <div class="product-detail-row">
+          <strong>Brand:</strong>
+
+          <span id="product-brand"></span>
+        </div>
+
+        <!-- Stock -->
+
+        <div class="product-detail-row">
+          <strong>Stock:</strong>
+
+          <span id="product-stock"></span>
+        </div>
+
+        <!-- Colors -->
+
+        <div class="product-option">
+          <h3>Color</h3>
+
+          <div id="color-options" class="option-container"></div>
+        </div>
+
+        <!-- Storage -->
+
+        <div class="product-option">
+          <h3>Storage / Variant</h3>
+
+          <div id="storage-options" class="option-container"></div>
+        </div>
+
+        <!-- Quantity -->
+
+        <div class="quantity-section">
+          <h3>Quantity</h3>
+
+          <div class="quantity-control">
+            <button id="minus">−</button>
+
+            <span id="qty"> 1 </span>
+
+            <button id="plus">+</button>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="product-actions">
+          <button id="add-cart-btn" class="add-cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Add to Cart
+          </button>
+
+          <button id="buy-now" class="buy-now-btn">Buy Now</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/products.js"></script>
+    <script src="js/productPage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

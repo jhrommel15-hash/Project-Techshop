@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Order Successful | TechStore</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Order Success CSS -->
+    <link rel="stylesheet" href="css/order-success.css" />
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+       NAVBAR
+  ========================== -->
+
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="index.html"> Home </a>
+          </li>
+
+          <li>
+            <a href="products.html"> Products </a>
+          </li>
+
+          <li>
+            <a href="wishlist.html"> Wishlist </a>
+          </li>
+
+          <li>
+            <a href="cart.html"> Cart </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- =========================
+       ORDER SUCCESS
+  ========================== -->
+
+    <main class="order-success-page">
+      <div class="success-box">
+        <!-- Success Icon -->
+
+        <div class="success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <!-- Title -->
+
+        <h1>Order Successful!</h1>
+
+        <p class="success-message">Thank you for your order!</p>
+
+        <!-- Customer -->
+
+        <div class="order-customer">
+          <p>
+            Thank you,
+            <strong id="success-name"> Customer </strong>!
+          </p>
+        </div>
+
+        <!-- Order Number -->
+
+        <div class="order-number">
+          <span> Order Number </span>
+
+          <strong id="success-order-id"> - </strong>
+        </div>
+
+        <!-- =========================
+           ORDER DETAILS
+      ========================== -->
+
+        <div class="success-section">
+          <h2>Order Details</h2>
+
+          <div id="success-items">
+            <!-- Products will be inserted by JavaScript -->
+          </div>
+        </div>
+
+        <!-- =========================
+           PAYMENT
+      ========================== -->
+
+        <div class="success-section">
+          <h2>Payment Method</h2>
+
+          <p id="success-payment">-</p>
+        </div>
+
+        <!-- =========================
+           DELIVERY
+      ========================== -->
+
+        <div class="success-section">
+          <h2>Delivery Information</h2>
+
+          <div class="delivery-info">
+            <p>
+              <strong>Address:</strong>
+              <span id="success-address">-</span>
+            </p>
+
+            <p>
+              <strong>City:</strong>
+              <span id="success-city">-</span>
+            </p>
+
+            <p>
+              <strong>Postal Code:</strong>
+              <span id="success-postal">-</span>
+            </p>
+
+            <p>
+              <strong>Phone:</strong>
+              <span id="success-phone">-</span>
+            </p>
+
+            <p>
+              <strong>Email:</strong>
+              <span id="success-email">-</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+           ORDER TOTAL
+      ========================== -->
+
+        <div class="success-total">
+          <span> Total Paid </span>
+
+          <strong id="success-total"> ₱0 </strong>
+        </div>
+
+        <!-- =========================
+           BUTTONS
+      ========================== -->
+
+        <div class="success-buttons">
+          <a href="products.html" class="btn-primary">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Continue Shopping
+          </a>
+
+          <a href="index.html" class="btn-secondary">
+            <i class="fa-solid fa-house"></i>
+
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+    <script src="js/order-success.js"></script>
+  </body>
+</html>

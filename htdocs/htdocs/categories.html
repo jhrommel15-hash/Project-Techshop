@@ -1,0 +1,283 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Categories | TechStore</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/categories.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="header">
+      <!-- Logo -->
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li>
+            <a href="categories.html" class="active">Categories</a>
+          </li>
+          <li><a href="deals.html">Deals</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+          <li>
+            <a href="my-orders.php">
+              <i class="fa-solid fa-box"></i>
+              My Orders
+            </a>
+          </li>
+
+          <li>
+            <a href="track-order.html">
+              <i class="fa-solid fa-truck-fast"></i>
+              Track My Order
+            </a>
+          </li>
+
+          <!-- Shown only after server verification -->
+          <li id="admin-dashboard-item" style="display: none">
+            <a href="admin/index.php" class="admin-link">
+              <i class="fa-solid fa-gauge-high"></i>
+              Admin Dashboard
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Product Search -->
+      <div class="search">
+        <input
+          type="text"
+          id="header-search-products"
+          placeholder="Search for products..."
+          aria-label="Search for products"
+        />
+
+        <button
+          id="search-button"
+          type="button"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- User / Cart / Wishlist -->
+      <div class="icons">
+        <a href="wishlist.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+
+        <!-- Same Login button class as index.html -->
+        <a href="login.html" id="login-link" class="login-btn">
+          <i class="fa-regular fa-user"></i>
+          Login
+        </a>
+
+        <!-- Logged-in User -->
+        <div id="user-menu" class="user-menu" style="display: none">
+          <a href="account.html" class="user-account-link">
+            <i class="fa-solid fa-user"></i>
+            <span id="username"></span>
+          </a>
+
+          <button
+            class="logout-btn"
+            type="button"
+            onclick="logout()"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= CATEGORIES PAGE ================= -->
+    <main class="categories-page">
+      <div class="categories-container">
+        <!-- Page Heading -->
+        <div class="categories-header">
+          <span class="categories-label">EXPLORE</span>
+          <h1>Shop by Category</h1>
+          <p>Find the perfect technology for your everyday needs.</p>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="category-grid">
+          <!-- Smartphones -->
+          <a href="products.html?category=Smartphone" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Smartphones</h2>
+              <p>Latest smartphones and mobile devices</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Laptops -->
+          <a href="products.html?category=Laptop" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-laptop"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Laptops</h2>
+              <p>Powerful laptops for work and entertainment</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Smartwatches -->
+          <a href="products.html?category=Smartwatch" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Smartwatches</h2>
+              <p>Stay connected with smart wearable devices</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Audio -->
+          <a href="products.html?category=Audio" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Audio</h2>
+              <p>Headphones, earbuds and audio accessories</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Accessories -->
+          <a href="products.html?category=Accessories" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-keyboard"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Accessories</h2>
+              <p>Useful accessories for your devices</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- Tablets -->
+          <a href="products.html?category=Tablet" class="category-card">
+            <div class="category-icon">
+              <i class="fa-solid fa-tablet-screen-button"></i>
+            </div>
+
+            <div class="category-info">
+              <h2>Tablets</h2>
+              <p>Portable devices for work and entertainment</p>
+              <span>
+                Shop Now
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <p>© 2026 TechStore. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+
+    <!-- Verify admin access on the server -->
+    <script>
+      (async function checkAdminSession() {
+        const adminLink = document.getElementById(
+          "admin-dashboard-item"
+        );
+
+        if (!adminLink) return;
+
+        adminLink.style.display = "none";
+
+        try {
+          const response = await fetch("api/admin-status.php", {
+            method: "GET",
+            credentials: "same-origin",
+            cache: "no-store"
+          });
+
+          if (!response.ok) return;
+
+          const result = await response.json();
+
+          if (result.isAdmin === true) {
+            adminLink.style.display = "";
+          }
+        } catch (error) {
+          adminLink.style.display = "none";
+        }
+      })();
+    </script>
+  </body>
+</html>

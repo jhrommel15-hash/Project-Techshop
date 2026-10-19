@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Order | TechStore</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #172033;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            width: min(900px, 92%);
+            margin: 40px auto;
+        }
+
+        .panel {
+            background: white;
+            padding: 26px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(15, 23, 42, .06);
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .muted {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 18px 0 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 13px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        button:disabled {
+            opacity: .6;
+            cursor: wait;
+        }
+
+        .notice {
+            display: none;
+            padding: 13px;
+            margin-top: 18px;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        .error {
+            display: block;
+            color: #991b1b;
+            background: #fee2e2;
+        }
+
+        .success {
+            display: block;
+            color: #166534;
+            background: #dcfce7;
+        }
+
+        #result {
+            display: none;
+        }
+
+        .order-number {
+            font-size: 18px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 28px 0;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .dot {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 9px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            border: 4px solid #e2e8f0;
+        }
+
+        .step.done {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .step.done .dot {
+            background: #22c55e;
+            border-color: #bbf7d0;
+        }
+
+        .step.current {
+            color: #1d4ed8;
+            font-weight: bold;
+        }
+
+        .step.current .dot {
+            background: #3b82f6;
+            border-color: #bfdbfe;
+        }
+
+        .step.cancelled {
+            color: #b91c1c;
+            font-weight: bold;
+        }
+
+        .step.cancelled .dot {
+            background: #ef4444;
+            border-color: #fecaca;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+        }
+
+        .item-meta {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .price {
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 8px 0;
+        }
+
+        .grand-total {
+            border-top: 1px solid #e2e8f0;
+            margin-top: 8px;
+            padding-top: 15px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 550px) {
+            header {
+                padding: 16px 5%;
+            }
+
+            main {
+                margin: 22px auto;
+            }
+
+            .panel {
+                padding: 19px;
+            }
+
+            .step {
+                font-size: 11px;
+            }
+
+            .item {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">Tech<span>Store</span></div>
+    <a href="index.html">← Back to Store</a>
+</header>
+
+<main>
+    <section class="panel">
+        <h1>Track Your Order</h1>
+        <p class="muted">
+            Enter the order number you received after checkout and
+            the email address used for your purchase.
+        </p>
+
+        <form id="tracking-form">
+            <label for="order-number">Order Number</label>
+            <input
+                id="order-number"
+                name="order_number"
+                type="text"
+                placeholder="Example: ORD-20261018213845-527"
+                maxlength="80"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your order email"
+                maxlength="254"
+                required
+            >
+
+            <button id="track-button" type="submit">Track Order</button>
+        </form>
+
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="result" aria-live="polite">
+        <div class="panel">
+            <h2>Order Details</h2>
+
+            <p class="muted">Order Number</p>
+            <p id="result-number" class="order-number"></p>
+
+            <p class="muted">Customer</p>
+            <p id="result-customer"></p>
+
+            <p class="muted">Current Status</p>
+            <p><span id="result-status" class="status"></span></p>
+
+            <h3>Delivery Progress</h3>
+            <div id="progress" class="progress">
+                <div class="step">
+                    <div class="dot"></div>
+                    <div>Pending</div>
+                </div>
+                <div class="step">
+                    <div class="dot"></div>
+                    <div>Processing</div>
+                </div>
+                <div class="step">
+                    <div class="dot"></div>
+                    <div>Shipped</div>
+                </div>
+                <div class="step">
+                    <div class="dot"></div>
+                    <div>Delivered</div>
+                </div>
+            </div>
+
+            <p id="progress-message" class="muted"></p>
+        </div>
+
+        <div class="panel">
+            <h2>Products Ordered</h2>
+            <div id="items-list"></div>
+
+            <div class="total-row">
+                <span>Subtotal</span>
+                <span id="subtotal"></span>
+            </div>
+
+            <div class="total-row">
+                <span>Shipping</span>
+                <span id="shipping"></span>
+            </div>
+
+            <div class="total-row grand-total">
+                <span>Total</span>
+                <span id="total"></span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+const form = document.getElementById("tracking-form");
+const button = document.getElementById("track-button");
+const notice = document.getElementById("notice");
+const result = document.getElementById("result");
+
+const peso = value =>
+    "₱" + Number(value).toLocaleString("en-PH", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+function showNotice(message, type) {
+    notice.textContent = message;
+    notice.className = "notice " + type;
+}
+
+function renderProgress(status) {
+    const steps = [...document.querySelectorAll("#progress .step")];
+    const message = document.getElementById("progress-message");
+
+    steps.forEach(step => {
+        step.className = "step";
+    });
+
+    if (status === "Cancelled") {
+        steps.forEach(step => step.classList.add("cancelled"));
+        message.textContent = "This order has been cancelled.";
+        return;
+    }
+
+    // The existing admin uses Completed as the final status.
+    const currentStatus = status === "Completed" ? "Delivered" : status;
+
+    const statusIndex = {
+        "Pending": 0,
+        "Processing": 1,
+        "Shipped": 2,
+        "Delivered": 3
+    };
+
+    const current = statusIndex[currentStatus];
+
+    if (current === undefined) {
+        message.textContent = "Current order status: " + status;
+        return;
+    }
+
+    steps.forEach((step, index) => {
+        if (index < current) {
+            step.classList.add("done");
+        } else if (index === current) {
+            step.classList.add("current");
+        }
+    });
+
+    if (currentStatus === "Delivered") {
+        steps[3].classList.remove("current");
+        steps[3].classList.add("done");
+        message.textContent = "Your order has been completed.";
+    } else {
+        message.textContent =
+            "Your order is currently " + currentStatus.toLowerCase() + ".";
+    }
+}
+
+function renderOrder(order) {
+    document.getElementById("result-number").textContent =
+        order.order_number;
+
+    document.getElementById("result-customer").textContent =
+        order.customer_name;
+
+    document.getElementById("result-status").textContent =
+        order.status;
+
+    renderProgress(order.status);
+
+    const itemsList = document.getElementById("items-list");
+    itemsList.replaceChildren();
+
+    if (!order.items || order.items.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "muted";
+        empty.textContent = "No product details were saved for this order.";
+        itemsList.appendChild(empty);
+    } else {
+        order.items.forEach(item => {
+            const row = document.createElement("div");
+            row.className = "item";
+
+            const details = document.createElement("div");
+
+            const name = document.createElement("div");
+            name.className = "item-name";
+            name.textContent = item.product_name;
+            details.appendChild(name);
+
+            const meta = document.createElement("div");
+            meta.className = "item-meta";
+
+            const options = [
+                "Quantity: " + item.quantity,
+                item.color ? "Color: " + item.color : "",
+                item.storage ? "Storage: " + item.storage : ""
+            ].filter(Boolean);
+
+            meta.textContent = options.join(" • ");
+            details.appendChild(meta);
+
+            const price = document.createElement("div");
+            price.className = "price";
+            price.textContent = peso(
+                Number(item.price) * Number(item.quantity)
+            );
+
+            row.append(details, price);
+            itemsList.appendChild(row);
+        });
+    }
+
+    document.getElementById("subtotal").textContent =
+        peso(order.subtotal);
+
+    document.getElementById("shipping").textContent =
+        peso(order.shipping);
+
+    document.getElementById("total").textContent =
+        peso(order.total);
+
+    result.style.display = "block";
+}
+
+form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    result.style.display = "none";
+    notice.className = "notice";
+    button.disabled = true;
+    button.textContent = "Searching...";
+
+    const orderNumber =
+        document.getElementById("order-number").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    try {
+        const params = new URLSearchParams({
+            order_number: orderNumber,
+            email: email
+        });
+
+        const response = await fetch(
+            "api/track-order.php?" + params.toString(),
+            { cache: "no-store" }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            showNotice(
+                data.message || "Could not find that order.",
+                "error"
+            );
+            return;
+        }
+
+        renderOrder(data.order);
+        showNotice("Order found successfully.", "success");
+
+    } catch (error) {
+        showNotice(
+            "Unable to connect. Make sure Apache and MySQL are running and open this page through localhost.",
+            "error"
+        );
+    } finally {
+        button.disabled = false;
+        button.textContent = "Track Order";
+    }
+});
+</script>
+</body>
+</html>

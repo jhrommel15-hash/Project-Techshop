@@ -1,0 +1,160 @@
+
+/* ================================
+   AUTHENTICATION PAGES
+   Login and Register
+================================ */
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.auth-container h1,
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #111827;
+  text-align: center;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container label {
+  color: #374151;
+  font-weight: 600;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #2878f0;
+  box-shadow: 0 0 0 3px rgba(40, 120, 240, 0.12);
+}
+
+.auth-container button,
+.auth-container .btn-primary {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2878f0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-container button:hover,
+.auth-container .btn-primary:hover {
+  background: #1769e0;
+}
+
+.auth-container p {
+  margin-top: 15px;
+  color: #4b5563;
+  text-align: center;
+}
+
+/* ================================
+   LOGGED-IN USER MENU
+================================ */
+
+#user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 600;
+}
+
+.user-account-link i {
+  font-size: 20px;
+}
+
+.user-account-link:hover {
+  color: #2874f0;
+}
+
+/* ================================
+   LOGOUT BUTTON
+   Matches the blue homepage button
+================================ */
+
+#user-menu button.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: none;
+  padding: 12px 18px;
+
+  background: #2878f0;
+  color: #ffffff;
+
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s ease;
+}
+
+#user-menu button.logout-btn:hover {
+  background: #1769e0;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   RESPONSIVE AUTHENTICATION
+================================ */
+
+@media (max-width: 600px) {
+  .auth-container {
+    width: calc(100% - 30px);
+    max-width: none;
+    margin: 25px auto;
+    padding: 22px;
+    box-sizing: border-box;
+  }
+
+  #user-menu {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  #user-menu button.logout-btn {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .user-account-link {
+    font-size: 14px;
+  }
+}

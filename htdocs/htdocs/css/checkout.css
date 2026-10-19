@@ -1,0 +1,324 @@
+/* =================================
+   CHECKOUT PAGE
+================================= */
+
+.checkout-page {
+  width: 90%;
+
+  max-width: 1200px;
+
+  margin: 50px auto;
+}
+
+.checkout-page h1 {
+  margin-bottom: 30px;
+}
+
+/* =================================
+   LAYOUT
+================================= */
+
+.checkout-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 380px;
+
+  gap: 30px;
+}
+
+/* =================================
+   CHECKOUT BOX
+================================= */
+
+.checkout-box {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-box h2 {
+  margin-bottom: 25px;
+
+  font-size: 21px;
+}
+
+.checkout-box h2 i {
+  margin-right: 8px;
+}
+
+/* =================================
+   FORM
+================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+
+  border-color: #2874f0;
+}
+
+.address-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+/* =================================
+   PAYMENT
+================================= */
+
+.payment-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  margin-bottom: 12px;
+
+  cursor: pointer;
+}
+
+.payment-option:hover {
+  border-color: #2874f0;
+}
+
+.payment-option input {
+  width: 18px;
+
+  height: 18px;
+}
+
+.payment-option span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.payment-option small {
+  color: #666;
+}
+
+/* =================================
+   ORDER SUMMARY
+================================= */
+
+.checkout-summary {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  height: fit-content;
+
+  position: sticky;
+
+  top: 20px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-summary h2 {
+  margin-bottom: 20px;
+}
+
+.checkout-item {
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.checkout-item img {
+  width: 70px;
+
+  height: 70px;
+
+  object-fit: contain;
+}
+
+.checkout-item-info {
+  flex: 1;
+}
+
+.checkout-item-info h3 {
+  font-size: 15px;
+
+  margin-bottom: 5px;
+}
+
+.checkout-item-info p {
+  font-size: 13px;
+
+  color: #666;
+
+  margin: 3px 0;
+}
+
+.checkout-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin: 15px 0;
+}
+
+.checkout-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin: 20px 0;
+}
+
+.place-order-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2874f0;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background: #1259c7;
+}
+
+/* ========================================
+   INTERNATIONAL PHONE NUMBER FIELD
+======================================== */
+
+.phone-input-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+
+.phone-input-wrapper select {
+  width: 45%;
+  max-width: 220px;
+  min-width: 0;
+  padding: 12px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-size: 14px;
+}
+
+.phone-input-wrapper input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.phone-input-wrapper select:focus,
+.phone-input-wrapper input:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+.phone-help,
+.phone-error {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.phone-help {
+  color: #6b7280;
+}
+
+.phone-error {
+  color: #dc2626;
+}
+
+.phone-error:empty {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .phone-input-wrapper {
+    gap: 6px;
+  }
+
+  .phone-input-wrapper select {
+    width: 48%;
+    font-size: 12px;
+    padding: 10px 4px;
+  }
+
+  .phone-input-wrapper input {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,325 @@
+/* ================================
+   MY ORDERS PAGE
+================================ */
+
+.orders-page {
+  min-height: 70vh;
+
+  padding: 50px 20px;
+}
+
+.orders-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+/* ================================
+   ORDERS HEADER
+================================ */
+
+.orders-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.orders-header h1 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0;
+
+  font-size: 32px;
+}
+
+.orders-header h1 i {
+  color: #2874f0;
+}
+
+.orders-header a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #2874f0;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+/* ================================
+   ORDER CARD
+================================ */
+
+.order-card {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ================================
+   ORDER HEADER
+================================ */
+
+.order-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.order-card-header strong {
+  font-size: 17px;
+}
+
+.order-card-header p {
+  margin: 7px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.order-status {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* ================================
+   ORDER PRODUCTS
+================================ */
+
+.order-products {
+  padding: 10px 0;
+}
+
+.order-product {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+/* PRODUCT IMAGE */
+
+.order-product img {
+  width: 100px;
+
+  height: 100px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  flex-shrink: 0;
+}
+
+/* PRODUCT INFORMATION */
+
+.order-product-info {
+  flex: 1;
+}
+
+.order-product-info h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+}
+
+.order-product-info p {
+  margin: 4px 0;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+/* PRODUCT PRICE */
+
+.order-product > strong {
+  font-size: 16px;
+
+  white-space: nowrap;
+}
+
+/* ================================
+   ORDER FOOTER
+================================ */
+
+.order-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+.order-card-footer strong {
+  color: #2874f0;
+
+  font-size: 22px;
+}
+
+/* ================================
+   NO ORDERS
+================================ */
+
+.no-orders {
+  background: white;
+
+  text-align: center;
+
+  padding: 60px 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.no-orders i {
+  display: block;
+
+  font-size: 50px;
+
+  color: #2874f0;
+
+  margin-bottom: 20px;
+}
+
+.no-orders h2 {
+  margin-bottom: 10px;
+}
+
+.no-orders p {
+  color: #666;
+
+  margin-bottom: 25px;
+}
+
+.no-orders a {
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  background: #2874f0;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 30px 15px;
+  }
+
+  .orders-header {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+  .orders-header h1 {
+    font-size: 26px;
+  }
+
+  .order-card {
+    padding: 18px;
+  }
+
+  .order-card-header {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+  .order-product {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .order-product img {
+    width: 70px;
+
+    height: 70px;
+  }
+
+  .order-product-info h3 {
+    font-size: 15px;
+  }
+
+  .order-product-info p {
+    font-size: 12px;
+  }
+
+  .order-product > strong {
+    font-size: 13px;
+  }
+
+  .order-card-footer {
+    font-size: 16px;
+  }
+
+  .order-card-footer strong {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,276 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact | TechStore</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+
+    <!-- Contact CSS -->
+    <link rel="stylesheet" href="css/contact.css" />
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <!-- Logo -->
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Toggle navigation menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="deals.html">Deals</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+
+          <li>
+            <a href="my-orders.php">
+              <i class="fa-solid fa-box"></i> My Orders
+            </a>
+          </li>
+
+          <li>
+            <a href="track-order.html">
+              <i class="fa-solid fa-truck-fast"></i> Track My Order
+            </a>
+          </li>
+
+          <li id="admin-dashboard-item" style="display: none">
+            <a href="admin/index.php" class="admin-link">
+              <i class="fa-solid fa-gauge-high"></i> Admin Dashboard
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Search -->
+      <div class="search">
+        <input
+          type="text"
+          id="header-search-products"
+          placeholder="Search for products..."
+          aria-label="Search for products"
+        />
+
+        <button
+          type="button"
+          id="search-button"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Header Icons -->
+      <div class="icons">
+        <!-- Wishlist -->
+        <a href="wishlist.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+
+        <!-- Login -->
+        <a href="login.html" id="login-link" class="login-btn">
+          <i class="fa-regular fa-user"></i> Login
+        </a>
+
+        <!-- Logged-in User Menu -->
+        <div id="user-menu" class="user-menu" style="display: none">
+          <a href="account.html" class="user-account-link">
+            <i class="fa-solid fa-user"></i>
+            <span id="username"></span>
+          </a>
+
+          <button
+            type="button"
+            class="logout-btn"
+            onclick="logout()"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTACT PAGE -->
+    <main class="contact-page">
+      <div class="contact-container">
+
+        <!-- Page Header -->
+        <div class="contact-header">
+          <span class="contact-label">GET IN TOUCH</span>
+          <h1>Contact Us</h1>
+          <p>Have a question or need help? We're here to help.</p>
+        </div>
+
+        <!-- Contact Content -->
+        <div class="contact-content">
+
+          <!-- Contact Information -->
+          <section class="contact-info">
+            <h2>Let's Talk</h2>
+
+            <p>
+              If you have questions about our products, orders, or services,
+              feel free to contact us.
+            </p>
+
+            <!-- Address -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div>
+                <h3>Address</h3>
+                <p>Catbalogan City, Samar</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+
+              <div>
+                <h3>Phone</h3>
+                <p>+63 900 000 0000</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+
+              <div>
+                <h3>Email</h3>
+                <p>support@techstore.com</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact Form -->
+          <section class="contact-form-box">
+            <h2>Send Us a Message</h2>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="subject"
+                  placeholder="What is this about?"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="6"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="contact-submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/search.js"></script>
+
+    <!-- Admin Dashboard Visibility -->
+    <script>
+      fetch("api/admin-status.php", {
+        credentials: "same-origin"
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          const adminItem = document.getElementById(
+            "admin-dashboard-item"
+          );
+
+          if (adminItem && result.isAdmin === true) {
+            adminItem.style.display = "list-item";
+          }
+        })
+        .catch((error) => {
+          console.error("Unable to check admin status:", error);
+        });
+    </script>
+  </body>
+</html>

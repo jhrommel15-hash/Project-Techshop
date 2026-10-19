@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login | TechStore</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="css/login.css" />
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Admin Login Link Styling -->
+    <style>
+      .admin-login-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      .admin-login-link:hover {
+        color: #1d4ed8;
+      }
+
+      .admin-login-link i {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>Tech<span>Store</span></h2>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="products.html">Products</a>
+          </li>
+
+          <li>
+            <a href="wishlist.html">Wishlist</a>
+          </li>
+
+          <li>
+            <a href="cart.html">Cart</a>
+          </li>
+
+          <!-- Admin Login -->
+          <li>
+            <a href="admin/login.php" class="admin-login-link">
+              <i class="fa-solid fa-shield-halved"></i>
+              Admin Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= LOGIN ================= -->
+
+    <main class="login-page">
+      <div class="login-container">
+        <div class="login-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="login-subtitle">Login to your TechStore account</p>
+
+        <form id="login-form">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="login-email">Email</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                type="email"
+                id="login-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="login-password">Password</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Remember Me -->
+          <div class="login-options">
+            <label>
+              <input type="checkbox" id="remember-me" />
+              Remember me
+            </label>
+
+            <a href="forgot-password.html">Forgot Password?</a>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="login-btn">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Login
+          </button>
+        </form>
+
+        <!-- Register -->
+        <p class="register-text">
+          Don't have an account?
+          <a href="register.html">Create Account</a>
+        </p>
+
+        <!-- Admin Login Shortcut -->
+        <p class="admin-shortcut">
+          <i class="fa-solid fa-shield-halved"></i>
+          Store administrator?
+          <a href="admin/login.php">Login to Admin Dashboard</a>
+        </p>
+
+        <style>
+          .admin-shortcut {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.8;
+          }
+
+          .admin-shortcut a {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+          }
+
+          .admin-shortcut a:hover {
+            text-decoration: underline;
+          }
+
+          .admin-shortcut i {
+            margin-right: 4px;
+          }
+        </style>
+      </div>
+    </main>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

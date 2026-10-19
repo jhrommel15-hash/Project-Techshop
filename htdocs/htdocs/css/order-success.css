@@ -1,0 +1,366 @@
+/* =================================
+   ORDER SUCCESS PAGE
+================================= */
+
+.order-success-page {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 50px 20px;
+}
+
+/* =================================
+   SUCCESS BOX
+================================= */
+
+.success-box {
+  width: 100%;
+  max-width: 750px;
+
+  background: #ffffff;
+
+  padding: 45px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+}
+
+/* =================================
+   SUCCESS ICON
+================================= */
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 25px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #22c55e;
+
+  color: white;
+
+  font-size: 40px;
+}
+
+.success-box h1 {
+  margin-bottom: 12px;
+}
+
+.success-message {
+  color: #666;
+
+  margin-bottom: 20px;
+}
+
+/* =================================
+   CUSTOMER
+================================= */
+
+.order-customer {
+  margin-top: 20px;
+
+  font-size: 16px;
+}
+
+.order-customer strong {
+  color: #111827;
+}
+
+/* =================================
+   ORDER NUMBER
+================================= */
+
+.order-number {
+  margin-top: 20px;
+
+  font-size: 18px;
+}
+
+.order-number strong {
+  color: #2874f0;
+}
+
+/* =================================
+   SECTIONS
+================================= */
+
+.success-section {
+  text-align: left;
+
+  margin-top: 35px;
+}
+
+.success-section h2 {
+  margin-bottom: 15px;
+
+  font-size: 22px;
+}
+
+/* =================================
+   ORDER ITEM
+================================= */
+
+.success-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.success-item img {
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+}
+
+.success-item-info {
+  flex: 1;
+}
+
+.success-item-info h3 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+}
+
+.success-item-info p {
+  margin: 4px 0;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+.success-item > strong {
+  font-size: 16px;
+
+  white-space: nowrap;
+}
+
+/* =================================
+   PAYMENT
+================================= */
+
+#success-payment {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+/* =================================
+   DELIVERY INFORMATION
+================================= */
+
+.delivery-info {
+  margin-top: 15px;
+
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border-radius: 10px;
+
+  text-align: left;
+}
+
+.delivery-info p {
+  margin: 10px 0;
+
+  color: #555;
+
+  font-size: 14px;
+}
+
+.delivery-info strong {
+  color: #111827;
+
+  margin-right: 5px;
+}
+
+/* =================================
+   TOTAL
+================================= */
+
+.success-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top: 2px solid #e5e7eb;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.success-total strong {
+  color: #2874f0;
+
+  font-size: 24px;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.success-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.success-buttons a {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 22px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #2874f0;
+
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1765df;
+}
+
+.btn-secondary {
+  background: white;
+
+  color: #2874f0;
+
+  border: 1px solid #2874f0;
+}
+
+.btn-secondary:hover {
+  background: #eff6ff;
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .order-success-page {
+    padding: 25px 12px;
+  }
+
+  .success-box {
+    padding: 30px 18px;
+
+    border-radius: 12px;
+  }
+
+  .success-icon {
+    width: 65px;
+    height: 65px;
+
+    font-size: 30px;
+  }
+
+  .success-box h1 {
+    font-size: 25px;
+  }
+
+  .order-number {
+    font-size: 15px;
+  }
+
+  .success-section h2 {
+    font-size: 20px;
+  }
+
+  .success-item {
+    gap: 12px;
+
+    align-items: flex-start;
+  }
+
+  .success-item img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .success-item-info h3 {
+    font-size: 14px;
+  }
+
+  .success-item-info p {
+    font-size: 12px;
+  }
+
+  .success-item > strong {
+    font-size: 13px;
+  }
+
+  .delivery-info {
+    padding: 15px;
+  }
+
+  .success-total {
+    font-size: 17px;
+  }
+
+  .success-total strong {
+    font-size: 20px;
+  }
+
+  .success-buttons {
+    flex-direction: column;
+  }
+
+  .success-buttons a {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+}
